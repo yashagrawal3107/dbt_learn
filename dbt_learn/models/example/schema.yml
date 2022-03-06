@@ -2,6 +2,7 @@
 version: 2
 
 models:
+
   - name: my_first_dbt_model
     description: "A starter dbt model"
     columns:
@@ -38,3 +39,22 @@ models:
 
   - name: increamental_practice
   - name: random_date
+  - name: snowflake_customers_purchases
+
+sources:
+  - name: sample
+    database: snowflake_sample_data  # Tell dbt to look for the source in the "raw" database
+    schema: tpch_sf1
+    tables:
+      - name: customer
+        columns:
+          - name: c_custkey
+            tests:
+              - unique
+              - not_null
+      - name: orders
+  # - name: sample2
+  #   database: snowflake_sample_data
+  #   schema: tpch_sf001
+  #   tables:
+  #     - name: customer
