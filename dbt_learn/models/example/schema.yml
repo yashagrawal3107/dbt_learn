@@ -1,0 +1,40 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          # - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: random_for_practice
+    description: "this is to practice"
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+    
+  - name: transformation_practice
+    description: "this is for transformation practice"
+    columns:
+      - name: new_id
+        tests:
+          - unique
+          - not_null
+
+  - name: increamental_practice
+  - name: random_date
