@@ -9,6 +9,10 @@ config-version: 2
 # This setting configures which "profile" dbt uses for this project.
 profile: 'dbt_learn'
 
+# vars: 
+#         my_first_variable: True
+#         my_second_variable: 2020
+
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
@@ -46,6 +50,7 @@ models:
       +materialized: view
       vars: 
         my_first_variable: True
+        my_second_variable: 2020
       pre-hook: "insert into dbt.audit (model, state, time) values ('{{this.name}}', 'starting model deployment', current_timestamp)"
       # post-hook: 'grant usage on schema {{target.this}} to role analyst'
       # post-hook: 'grant select on {{this}} to role analyst'

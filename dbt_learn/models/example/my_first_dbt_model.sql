@@ -23,7 +23,7 @@ with source_data as (
 --     select 3 as id
 )
 
-select *
+select *, {{var('my_first_variable')}} as first_variable
 from source_data
 
 /*
