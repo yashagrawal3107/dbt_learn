@@ -15,6 +15,6 @@ jobs:
                 branch: "dev"
                 base: main
                 title: "demo for auto pr"
-                reviewers: yashagrawal3107
+  
 
       
