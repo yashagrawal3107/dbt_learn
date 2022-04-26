@@ -1,0 +1,21 @@
+name: Auto create PR  
+on:
+    push:
+        branches:    
+            - 'dev'
+ 
+jobs:
+    createPullRequest:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Raise PR
+            - uses: peter-evans/create-pull-request@v3
+              with:
+                branch: "auto-pr-branch"
+                base: main
+                title: "demo for auto pr"
+                reviewers: peter-evans
+
+      
+
